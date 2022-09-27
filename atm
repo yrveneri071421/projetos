@@ -1,0 +1,38 @@
+import os
+
+print("Seja bem vindo ao Banco(a)")
+print(" Insira o cartão")
+saldo = 0.00
+i=0
+while(i<=2):
+    senha = input("Digite sua senha: ")
+    if senha == "123":
+        break
+    else:
+        i=i+1
+        if (i == 3):
+            print("cartão bloqueado, ladrãozinho")
+            pause = input("Encerrando sistema...")
+            os._exit(1)
+while(True):
+    print(" Qual operação desejá realizar? ")
+    print("1- Saque")
+    print("2- Depósito")
+    print("3- Saldo")
+    print("4- Sair")
+    op = input("Digite a operação desejada ")
+    if(op=="1"):
+        saque = float(input("Qual o valor do saque:"))
+        saldo = saldo - saque
+        print("Saldo atual: ", saldo)
+    elif(op== "2"):
+        deposito = float(input("Qual o valor do depósito? "))
+        saldo = saldo + deposito
+        print("Seu saldo atual é ", saldo)
+    elif(op=="3"):
+        print("Seu saldo atual é ", saldo)
+    elif(op=="4"):
+        print("Volte sempre!")
+        os._exit(1)
+    else:
+        print("Operação inválida")
